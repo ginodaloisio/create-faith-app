@@ -70,7 +70,7 @@ export const getNpmVersion = () =>
   // `fetch` to the registry is faster than `npm view` so we try that first
   checkForLatestVersion().catch(() => {
     try {
-      return execSync("npm view create-t3-app version").toString().trim();
+      return execSync("npm view create-faith-app version").toString().trim();
     } catch {
       return null;
     }
