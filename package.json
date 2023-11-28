@@ -4,14 +4,19 @@
   "description": "Create web application with faith stack",
   "license": "MIT",
   "keywords": [
-    "create-f3-app",
+    "create-faith-app",
     "init.tips",
     "next.js",
-    "f3-stack",
+    "faith-stack",
     "tailwind",
     "prisma",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ginodaloisio/create-faith-app",
+    "directory": "src/cli"
+  },
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
