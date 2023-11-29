@@ -9,6 +9,7 @@ const config = {
   semi: true,
   trailingComma: "all",
   tabWidth: 2,
+  endOfLine: "auto",
 };
 
 export default config;
