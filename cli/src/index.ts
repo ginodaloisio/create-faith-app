@@ -14,15 +14,14 @@ import { buildPkgInstallerMap } from "./installers/index.js";
 import { getUserPkgManager } from "./utils/getUserPkgManager.js";
 import { getVersion } from "./utils/getVersion.js";
 import { parseNameAndPath } from "./utils/parseNameAndPath.js";
-// import { logger } from "~/utils/logger.js";
 import { renderTitle } from "./utils/renderTitle.js";
 import {
   getNpmVersion,
   renderVersionWarning,
 } from "./utils/renderVersionWarning.js";
 
-type CT3APackageJSON = PackageJson & {
-  ct3aMetadata?: {
+type CFAITHAPackageJSON = PackageJson & {
+  cfaithaMetadata?: {
     initVersion: string;
   };
 };
@@ -31,9 +30,9 @@ const main = async () => {
   const npmVersion = await getNpmVersion();
   const pkgManager = getUserPkgManager();
 
+  renderTitle();
   npmVersion && renderVersionWarning(npmVersion);
 
-  renderTitle();
   const {
     appName,
     packages,
@@ -54,9 +53,9 @@ const main = async () => {
 
   const pkgJson = fs.readJSONSync(
     path.join(projectDir, "package.json")
-  ) as CT3APackageJSON;
+  ) as CFAITHAPackageJSON;
   pkgJson.name = scopedAppName;
-  pkgJson.ct3aMetadata = { initVersion: getVersion() };
+  pkgJson.cfaithaMetadata = { initVersion: getVersion() };
 
   if (pkgManager !== "bun") {
     const { stdout } = await execa(pkgManager, ["-v"], {

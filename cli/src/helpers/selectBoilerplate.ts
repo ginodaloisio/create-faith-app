@@ -31,7 +31,6 @@ export const selectLayoutFile = ({
   projectDir,
   packages,
 }: SelectBoilerplateProps) => {
-  const faviconFileDir = path.join(PKG_ROOT, "template/extras/src/app");
   const layoutFileDir = path.join(PKG_ROOT, "template/extras/src/app/layout");
 
   const usingTw = packages.tailwind.inUse;
@@ -40,14 +39,11 @@ export const selectLayoutFile = ({
     layoutFile = "with-tw.tsx";
   }
 
-  const faviconSrc = path.join(faviconFileDir, "favicon.ico");
-  const faviconDest = path.join(projectDir, "src/app/favicon.ico");
-
   const appSrc = path.join(layoutFileDir, layoutFile);
   const appDest = path.join(projectDir, "src/app/layout.tsx");
 
   fs.copySync(appSrc, appDest);
-  fs.copySync(faviconSrc, faviconDest);
+  // fs.copySync(faviconSrc, faviconDest);
 };
 
 export const selectIndexFile = ({

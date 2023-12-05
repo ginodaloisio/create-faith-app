@@ -1,17 +1,6 @@
 {
-  "include": [
-    ".eslintrc.cjs",
-    "prettier.config.mjs",
-    "src",
-    "tsup.config.ts",
-    "reset.d.ts"
-  ],
+  "include": [".eslintrc.cjs", "prettier.config.mjs"],
   "compilerOptions": {
-    /* EXTENDED OPTIONS */
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
     /* LANGUAGE COMPILATION OPTIONS */
     "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ES2020"],

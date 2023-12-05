@@ -41,7 +41,7 @@ interface cliResults {
 
 const defaultOptions: cliResults = {
   appName: DEFAULT_APP_NAME,
-  packages: ["authJs", "prisma", "tailwind", "shadcn/ui"],
+  packages: ["nextAuth", "prisma", "tailwind", "shadcn/ui"],
   flags: {
     noGit: false,
     noInstall: false,
@@ -62,7 +62,7 @@ export const runCli = async (): Promise<cliResults> => {
 
   const program = new Command()
     .name(CREATE_FAITH_APP)
-    .description("A CLI to create a new web application using f3 stack")
+    .description("A CLI to create a new web application using faith's stack")
     .argument("[dir]", "Name of the application")
     .option(
       "--noInstall",
@@ -71,7 +71,7 @@ export const runCli = async (): Promise<cliResults> => {
     )
     .option(
       "-y, --default",
-      "Bypass the CLI and bootstrap a new default f3-app"
+      "Bypass the CLI and bootstrap a new default faith-app"
     )
     /** START CI-FLAGS */
     /**

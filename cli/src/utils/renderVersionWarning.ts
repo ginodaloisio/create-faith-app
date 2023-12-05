@@ -15,11 +15,11 @@ export const renderVersionWarning = (npmVersion: string) => {
     logger.warn("  Please report any bugs you encounter.");
   } else if (currentVersion.includes("next")) {
     logger.warn(
-      "  You are running create-t3-app with the @next tag which is no longer maintained."
+      "  You are running create-faith-app with the @next tag which is no longer maintained."
     );
     logger.warn("  Please run the CLI with @latest instead.");
   } else if (currentVersion !== npmVersion) {
-    logger.warn("  You are using an outdated version of create-t3-app.");
+    logger.warn("  You are using an outdated version of create-faith-app.");
     logger.warn(
       "  Your version:",
       currentVersion + ".",
@@ -46,7 +46,7 @@ function checkForLatestVersion(): Promise<string> {
   return new Promise((resolve, reject) => {
     https
       .get(
-        "https://registry.npmjs.org/-/package/create-t3-app/dist-tags",
+        "https://registry.npmjs.org/-/package/create-faith-app/dist-tags",
         (res) => {
           if (res.statusCode === 200) {
             let body = "";

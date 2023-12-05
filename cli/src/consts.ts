@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const distPath = path.dirname(__filename);
 export const PKG_ROOT = path.join(distPath, "../");
 
-export const TITLE_TEXT = figlet.textSync("CREATEFAITHAPP", "Small");
+export const TITLE_TEXT = figlet.textSync("CREATE FAITH APP", "Small");
 
 export const DEFAULT_APP_NAME = "my-faith-app";
 export const CREATE_FAITH_APP = "create-faith-app";
